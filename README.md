@@ -29,3 +29,7 @@ ShowReportsInGame:
   # Duration for hint message sent to all RA access players about normal report
   cheater_report_hint_duration: 5
   ```
+## Previews below
+
+![Hint](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1635).png)
+![ConsoleMessage](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1636).png)
