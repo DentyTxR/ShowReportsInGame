@@ -27,7 +27,6 @@ namespace ShowReportsInGame
 		public ushort NormalReportHintDuration { get; set; } = 5;
 
 
-
 		//Cheater self report stuffz
 		[Description("Broadcast message sent to player reporting themself in a normal report")]
 		public string CheaterSelfReportMessage { get; set; } = "Why are you trying to report yourself?";
