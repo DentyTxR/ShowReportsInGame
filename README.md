@@ -1,6 +1,7 @@
 # ShowReportsInGame
 Simple plugin to show ingame reports to all online staff, Made in EXILED for SCP:SL
 
+### P.S, I'm not that good with C# so there will be some small brain moments here, Also I plan on adding way more configs and stuff, Just message me on Discord if you got suggestions: DentyTxR#0524
 ## How can I download this?
   - Vist this page, https://github.com/DentyTxR/ShowReportsInGame/releases/
 
