@@ -7,7 +7,7 @@ P.S, I'm not that good with C# so there will be some small brain moments here so
 ### How do I download this?
   - Go here and download the latest release, https://github.com/DentyTxR/ShowReportsInGame/releases
 
-### Configs (Breaking from first release)
+### Default Config (Breaking from first release)
 
 ```yml
 ShowReportsInGame:
@@ -60,6 +60,28 @@ ShowReportsInGame:
   # Cheater report hint third line
   cheaterreport_string_three: '<size=20>[<color=yellow>Cheater Report, Check Console (`) For Info</color>]</size>'
 ```
+### Custom variables
+#### Lets just call them variables, These can be used in config string messages to return info, These are case sensitive!!!
+
+
+| Variable Name | What It Returns | Example |
+
+| --------------- | --------------- | --------------- |
+
+| %IssuerUserId% | return | ex |
+
+| %% | return | ex |
+
+| %% | return | ex |
+
+| %% | return | ex |
+
+| %% | return | ex |
+
+| %% | return | ex |
+
+| %% | return | ex |
+
 
 ### Previews
 
