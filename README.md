@@ -60,27 +60,22 @@ ShowReportsInGame:
   # Cheater report hint third line
   cheaterreport_string_three: '<size=20>[<color=yellow>Cheater Report, Check Console (`) For Info</color>]</size>'
 ```
-### Custom variables
+### Custom variables (For now this is just for the hint, Working on custom console message)
 #### Lets just call them variables, These can be used in config string messages to return info, These are case sensitive!!!
 
-
-| Variable Name | What It Returns | Example |
-
-| --------------- | --------------- | --------------- |
-
-| %IssuerUserId% | return | ex |
-
-| %% | return | ex |
-
-| %% | return | ex |
-
-| %% | return | ex |
-
-| %% | return | ex |
-
-| %% | return | ex |
-
-| %% | return | ex |
+| Variable Name | Returns |
+| --- | --- |
+| `%IssuerUserId%` | Reporter's User ID (@steam/@discord included) |
+| `%IssuerGameId%` | Reporter's Game ID (# In RA) |
+| `%IssuerNickname%` | Reporter's Nickname |
+| `%IssuerRole%` | Reporter's Current Role At Report Time |
+| ------------------ | ------------------------------------------ |
+| `%TargetUserId%` | Reported User ID (@steam/@discord included) |
+| `%TargetGameId%` | Reported Game ID (# In RA) |
+| `%TargetNickname%` | Reported Nickname |
+| `%TargetRole%` | Reported Current Role At Report Time |
+| ------------------ | ------------------------------------------ |
+| `%ReportReason%` | Reason In Report |
 
 
 ### Previews
