@@ -63,5 +63,9 @@ ShowReportsInGame:
 
 ### Previews
 
+[Default config]
 ![Hint](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1635).png)
+[Custom config]
+![HintCustom](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1641).png)
+[DefaultConsoleMessage]
 ![ConsoleMessage](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1636).png)
