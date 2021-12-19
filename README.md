@@ -8,7 +8,6 @@ P.S, I'm not that good with C# so there will be some small brain moments here so
   - Go here and download the latest release, https://github.com/DentyTxR/ShowReportsInGame/releases
 
 ### Configs
-  - Go here and download the latest release, https://github.com/DentyTxR/ShowReportsInGame/releases
 
 ```yml
 ShowReportsInGame:
