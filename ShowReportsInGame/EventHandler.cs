@@ -34,7 +34,7 @@ namespace ShowReportsInGame
 
                         //Sends console message to all RA access players
                         player.SendConsoleMessage(
-                           message: normalSelfReportConsole, color: "yellow");
+                           message: "[ShowReportsInGame Plugin]" + normalSelfReportConsole, color: "yellow");
                     }
                 }
             }
@@ -51,7 +51,7 @@ namespace ShowReportsInGame
 
                         //Sends console message to all RA access players
                         player.SendConsoleMessage(
-                           message: normalReportConsole, color: "yellow");
+                           message: "[ShowReportsInGame Plugin]" + normalReportConsole, color: "yellow");
                     }
                 }
             }
@@ -81,7 +81,7 @@ namespace ShowReportsInGame
 
                         //Sends console message about report
                         player.SendConsoleMessage(
-                           message: cheaterSelfReportConsole, color: "yellow");
+                           message: "[ShowReportsInGame Plugin]" + cheaterSelfReportConsole, color: "yellow");
                     }
                 }
             }
@@ -97,7 +97,7 @@ namespace ShowReportsInGame
 
                         //Sends console message about report
                         player.SendConsoleMessage(
-                           message: cheaterReportConsole, color: "yellow");
+                           message: "[ShowReportsInGame Plugin]" + cheaterReportConsole, color: "yellow");
                     }
                 }
             }
