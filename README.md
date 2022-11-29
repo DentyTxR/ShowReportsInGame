@@ -60,7 +60,6 @@ cheater_report_console_msg: '[ShowReportsInGame Plugin]\n<size=23>[<color=red>CH
 
 ### Previews
 
-[Default config] (Ignore the eeee)
 ![Hint](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1635).png)
 ![HintCustom](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1641).png)
 ![ConsoleMessage](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1636).png)
