@@ -1,5 +1,5 @@
 # ShowReportsInGame
-### Simple plugin to show ingame reports to all online staff, Made in EXILED for SCP:SL
+### Simple plugin to show ingame reports to all online staff, Made in with the EXILED framework for SCP:SL (EXILED 5)
 
 
 P.S, I'm not that good with C# so there will be some small brain moments here so if you have any code suggestions lmk, Also I plan on adding way more configs and stuff, Just message me on Discord if you got suggestions for that.
@@ -7,7 +7,7 @@ P.S, I'm not that good with C# so there will be some small brain moments here so
 ### How do I download this?
   - Go here and download the latest release, https://github.com/DentyTxR/ShowReportsInGame/releases
 
-### Configs
+### Default Config (Breaking from first release)
 
 ```yml
 # Whether or not the plugin is enabled.
@@ -39,7 +39,29 @@ cheater_report_string_one: '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<size=20><color=red>
 # Normal selfreport console message
 cheater_report_console_msg: '[ShowReportsInGame Plugin]\n<size=23>[<color=red>CHEATER REPORT</color>]</size>\n<size=23><color=orange>Reporter</color>: <color=red>%IssuerNickname%</color></size>\n<size=18>  - GameID: %IssuerGameId%</size>\n<size=18>  - UserID: %IssuerUserId%</size>\n<size=23><color=orange>Reported</color>: <color=red>%TargetNickname%</color></size>\n<size=18>  - GameID: %TargetGameId%</size>\n<size=18>  - UserID: %TargetUserId%</size>\n<size=23><color=orange>Reason</color>: <color=red>%ReportReason% </color></size>'
 ```
+### Custom variables (For now this is just for the hint, Working on custom console message)
+#### Lets just call them variables, These can be used in config string messages to return info, These are case sensitive!!!
+
+| Variable Name | Returns |
+| --- | --- |
+| `%IssuerUserId%` | Reporter's User ID (@steam/@discord included) |
+| `%IssuerGameId%` | Reporter's Game ID (# In RA) |
+| `%IssuerNickname%` | Reporter's Nickname |
+| `%IssuerRole%` | Reporter's Current Role At Report Time |
+| ------------------ | ------------------------------------------ |
+| `%TargetUserId%` | Reported User ID (@steam/@discord included) |
+| `%TargetGameId%` | Reported Game ID (# In RA) |
+| `%TargetNickname%` | Reported Nickname |
+| `%TargetRole%` | Reported Current Role At Report Time |
+| ------------------ | ------------------------------------------ |
+| `%ReportReason%` | Reason In Report |
 
 
+### Previews
+
+[Default config] (Ignore the eeee)
 ![Hint](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1635).png)
+[Custom config]
+![HintCustom](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1641).png)
+[DefaultConsoleMessage]
 ![ConsoleMessage](https://raw.githubusercontent.com/DentyTxR/ShowReportsInGame/master/img/Screenshot%20(1636).png)
