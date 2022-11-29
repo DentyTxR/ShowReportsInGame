@@ -12,81 +12,50 @@ namespace ShowReportsInGame
 		[Description("Should debug logs be enabled?")]
 		public bool EnableDebug { get; set; } = false;
 
-		//Normal self report stuffz
-		[Description("Should a broadcast be sent to a player when they try reporting themself in a normal report?")]
-		public bool NormalSelfReportBroadcastEnabled { get; set; } = true;
 
-		[Description("Broadcast message sent to player reporting themself in a normal report")]
-		public string NormalSelfReportBroadcast { get; set; } = "Why are you trying to report yourself?";
+		[Description("Should a broadcast be sent to the player that reported themself?")]
+		public bool SelfReportBroadcastEnabled { get; set; } = true;
 
-		[Description("Broadcast message duration sent to player reporting themself in a normal report")]
-		public ushort NormalSelfReportBroadcastDuration { get; set; } = 5;
+		[Description("Broadcast string for selfreport message.")]
+		public string SelfReportBroadcast { get; set; } = "Why are you trying to report yourself?";
 
-		[Description("Duration for hint message sent to all RA access players about self report in a normal report")]
-		public ushort NormalSelfReportHintDuration { get; set; } = 5;
+		[Description("Selfreport broadcast duration")]
+		public ushort SelfReportBroadcastDuration { get; set; } = 5;
 
-		//Normal report stuffz
-		[Description("Duration for hint message sent to all RA access players about normal report")]
-		public ushort NormalReportHintDuration { get; set; } = 5;
+		[Description("Duration for hint message sent to all RA access players")]
+		public ushort ReportHintDuration { get; set; } = 5;
 
 
-		//Cheater self report stuffz
-		[Description("Should a broadcast be sent to a player when they try reporting themself in a cheater report?")]
-		public bool CheaterSelfReportBroadcastEnabled { get; set; } = true;
-
-		[Description("Broadcast message sent to player reporting themself in a normal report")]
-		public string CheaterSelfReportBroadcast { get; set; } = "Why are you trying to report yourself?";
-
-		[Description("Broadcast message duration sent to player reporting themself in a normal report")]
-		public ushort CheaterSelfReportBroadcastDuration { get; set; } = 5;
-
-		[Description("Duration for hint message sent to all RA access players about self report in a normal report")]
-		public ushort CheaterSelfReportHintDuration { get; set; } = 5;
-
-		//Cheater report stuffz
-		[Description("Duration for hint message sent to all RA access players about normal report")]
-		public ushort CheaterReportHintDuration { get; set; } = 5;
-
-
-		//Custom hint strings
 		//Normal selfreport custom text
 		[Description("Normal selfreport hint first line")]
-		public string NormalSelfreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>";
+		public string NormalSelfreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=red>NOTE: THIS IS A SELF-REPORT</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Player Report, Check Console (`) For Info</color>]</size>";
 
-		[Description("Normal selfreport hint second line")]
-		public string NormalSelfreportStringTwo { get; set; } = @"<size=20><color=red>/|\</color>[<color=red>NOTE: THIS IS A SELF-REPORT</color>]<color=red>/|\</color></size>";
+        //Normal selfreport custom console string
+		[Description("Normal selfreport console message")]
+        public string LocalSelfreportConsoleMsg { get; set; } = "[ShowReportsInGame Plugin]\n" + @"<size=23>[<color=yellow>Normal Self-Report</color>]</size>\n<size=23><color=orange>Reporter</color>: <color=red>%IssuerNickname%</color></size>\n<size=18>  - GameID: %IssuerGameId%</size>\n<size=18>  - UserID: %IssuerUserId%</size>\n<size=23><color=orange>Reported</color>: <color=red>%TargetNickname%</color></size>\n<size=18>  - GameID: %TargetGameId%</size>\n<size=18>  - UserID: %TargetUserId%</size>\n<size=23><color=orange>Reason</color>: <color=red>%ReportReason% </color></size>";
 
-		[Description("Normal selfreport hint third line")]
-		public string NormalSelfreportStringThree { get; set; } = @"<size=20>[<color=yellow>Player Report, Check Console (`) For Info</color>]</size>";
+        //Normal report custom text
+        [Description("Normal report hint first line")]
+		public string NormalreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=green>NOTE: This is a normal report.</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Player Report, Check Console (`) For Info</color>]</size>";
 
-		//Normal report custom text
-		[Description("Normal report hint first line")]
-		public string NormalreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>";
+        //Normal report custom console string
+        [Description("Normal selfreport console message")]
+        public string LocalReportConsoleMsg { get; set; } = "[ShowReportsInGame Plugin]\n" + @"<size=23>[<color=yellow>Normal Report</color>]</size>\n<size=23><color=orange>Reporter</color>: <color=red>%IssuerNickname%</color></size>\n<size=18>  - GameID: %IssuerGameId%</size>\n<size=18>  - UserID: %IssuerUserId%</size>\n<size=23><color=orange>Reported</color>: <color=red>%TargetNickname%</color></size>\n<size=18>  - GameID: %TargetGameId%</size>\n<size=18>  - UserID: %TargetUserId%</size>\n<size=23><color=orange>Reason</color>: <color=red>%ReportReason% </color></size>";
 
-		[Description("Normal report hint second line")]
-		public string NormalreportStringTwo { get; set; } = @"<size=20><color=red>/|\</color>[<color=green>NOTE: This is a normal report.</color>]<color=red>/|\</color></size>";
+        //Cheater selfreport custom text
+        [Description("Cheater selfreport hint first line")]
+		public string CheaterSelfreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=red>WARNING: THIS IS A CHEATER SELFREPORT</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Cheater Report, Check Console (`) For Info</color>]</size>";
 
-		[Description("Normal report hint third line")]
-		public string NormalreportStringThree { get; set; } = @"<size=20>[<color=yellow>Player Report, Check Console (`) For Info</color>]</size>";
+        //Cheater selfreport custom console string
+        [Description("Normal selfreport console message")]
+        public string CheaterSelfreportConsoleMsg { get; set; } = "[ShowReportsInGame Plugin]\n" + @"<size=23>[<color=red>CHEATER SELF-REPORT</color>]</size>\n<size=23><color=orange>Reporter</color>: <color=red>%IssuerNickname%</color></size>\n<size=18>  - GameID: %IssuerGameId%</size>\n<size=18>  - UserID: %IssuerUserId%</size>\n<size=23><color=orange>Reported</color>: <color=red>%TargetNickname%</color></size>\n<size=18>  - GameID: %TargetGameId%</size>\n<size=18>  - UserID: %TargetUserId%</size>\n<size=23><color=orange>Reason</color>: <color=red>%ReportReason% </color></size>";
 
-		//Cheater selfreport custom text
-		[Description("Cheater selfreport hint first line")]
-		public string CheaterSelfreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>";
+        //Cheater report custom text
+        [Description("Cheater report hint first line")]
+		public string CheaterreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=red>WARNING: THIS IS A CHEATER REPORT</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Cheater Report, Check Console (`) For Info</color>]</size>";
 
-		[Description("Cheater selfreport hint second line")]
-		public string CheaterSelfreportStringTwo { get; set; } = @"<size=20><color=red>/|\</color>[<color=red>WARNING: THIS IS A CHEATER SELFREPORT</color>]<color=red>/|\</color></size>";
-
-		[Description("Cheater selfreport hint third line")]
-		public string CheaterSelfreportStringThree { get; set; } = @"<size=20>[<color=yellow>Cheater Report, Check Console (`) For Info</color>]</size>";
-
-		//Cheater report custom text
-		[Description("Cheater report hint first line")]
-		public string CheaterreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>";
-
-		[Description("Cheater report hint second line")]
-		public string CheaterreportStringTwo { get; set; } = @"<size=20><color=red>/|\</color>[<color=red>WARNING: THIS IS A CHEATER REPORT</color>]<color=red>/|\</color></size>";
-
-		[Description("Cheater report hint third line")]
-		public string CheaterreportStringThree { get; set; } = @"<size=20>[<color=yellow>Cheater Report, Check Console (`) For Info</color>]</size>";
-	}
+        //Cheater report custom console string
+        [Description("Normal selfreport console message")]
+        public string CheaterReportConsoleMsg { get; set; } = "[ShowReportsInGame Plugin]\n" + @"<size=23>[<color=red>CHEATER REPORT</color>]</size>\n<size=23><color=orange>Reporter</color>: <color=red>%IssuerNickname%</color></size>\n<size=18>  - GameID: %IssuerGameId%</size>\n<size=18>  - UserID: %IssuerUserId%</size>\n<size=23><color=orange>Reported</color>: <color=red>%TargetNickname%</color></size>\n<size=18>  - GameID: %TargetGameId%</size>\n<size=18>  - UserID: %TargetUserId%</size>\n<size=23><color=orange>Reason</color>: <color=red>%ReportReason% </color></size>";
+    }
 }

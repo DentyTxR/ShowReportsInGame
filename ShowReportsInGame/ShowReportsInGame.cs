@@ -14,7 +14,7 @@ namespace ShowReportsInGame
         public override string Name { get; } = "ShowReportsInGame";
         public override string Author { get; } = "Denty";
         public override string Prefix { get; } = "ShowReportsInGame";
-        public override Version Version { get; } = new Version(1, 2, 0);
+        public override Version Version { get; } = new Version(2, 0, 0);
         public override Version RequiredExiledVersion { get; } = new Version(5, 0, 0);
 
 
@@ -26,15 +26,12 @@ namespace ShowReportsInGame
             ServerEvent.LocalReporting += EventHandler.LocalReport;
             ServerEvent.ReportingCheater += EventHandler.CheaterReport;
 
-            Log.Info("ShowReportsInGame has been enabled.");
             base.OnEnabled();
         }
 
 
         public override void OnDisabled()
         {
-            Log.Info("ShowReportsInGame is disabled.");
-
             EventHandler = null;
             base.OnDisabled();
         }
