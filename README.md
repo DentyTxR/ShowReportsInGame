@@ -1,4 +1,5 @@
 # ShowReportsInGame
+## I will update this plugin when the new SL version comes out, I am unable to update it before since im not allowed a version of the EXILED beta, and ill port this to the NW API aswell
 ### Simple plugin to show ingame reports to all online staff, Made in with the EXILED framework for SCP:SL (EXILED 5)
 
 
