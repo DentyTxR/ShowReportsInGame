@@ -1,9 +1,8 @@
 ﻿using System;
-using Exiled.Events.EventArgs;
 using Exiled.API.Features;
 using Player = Exiled.API.Features.Player;
-using UnityEngine;
-using Exiled.Events.Handlers;
+using Exiled.Events.EventArgs.Player;
+using Exiled.Events.EventArgs.Server;
 
 namespace ShowReportsInGame
 {
@@ -17,12 +16,12 @@ namespace ShowReportsInGame
             string normalReportConsole = NormalReportConsoleString(ev);
 
             //If the reporter reports themself
-            if (ev.Target.UserId == ev.Issuer.UserId)
+            if (ev.Target.UserId == ev.Target.UserId)
             {
                 if (ShowReportsInGame.Singleton.Config.SelfReportBroadcastEnabled)
                 {
-                    ev.Issuer.Broadcast(ShowReportsInGame.Singleton.Config.SelfReportBroadcastDuration, ShowReportsInGame.Singleton.Config.SelfReportBroadcast);
-                    Log.Debug($"Sending normal selfreport broadcast to {ev.Target}");
+                    ev.Target.Broadcast(ShowReportsInGame.Singleton.Config.SelfReportBroadcastDuration, ShowReportsInGame.Singleton.Config.SelfReportBroadcast);
+                    Log.Debug($"Sending selfreport msg to {ev.Target.Nickname}");
                 }
 
                 //Sends a hint message to all players in the server with RA access
@@ -40,7 +39,7 @@ namespace ShowReportsInGame
             }
 
 
-            if (ev.Target.UserId != ev.Issuer.UserId)
+            if (ev.Player.UserId != ev.Target.UserId)
             {
                 //Sends a hint message to all players in the server with RA access
                 foreach (var player in Player.List)
@@ -65,11 +64,11 @@ namespace ShowReportsInGame
             string cheaterReportConsole = CheaterReportConsoleString(ev);
 
             //If someone reports themself
-            if (ev.Target.UserId == ev.Issuer.UserId)
+            if (ev.Target.UserId == ev.Player.UserId)
             {
                 if (ShowReportsInGame.Singleton.Config.SelfReportBroadcastEnabled)
                 {
-                    ev.Issuer.Broadcast(ShowReportsInGame.Singleton.Config.SelfReportBroadcastDuration, ShowReportsInGame.Singleton.Config.SelfReportBroadcast);
+                    ev.Player.Broadcast(ShowReportsInGame.Singleton.Config.SelfReportBroadcastDuration, ShowReportsInGame.Singleton.Config.SelfReportBroadcast);
                 }
 
                 //Sends hint and console message to all players with RA access about cheater selfreport moment
@@ -86,7 +85,7 @@ namespace ShowReportsInGame
                 }
             }
 
-            else if (ev.Target.UserId != ev.Issuer.UserId)
+            else if (ev.Target.UserId != ev.Player.UserId)
             {
                 //Sends hint and console message to all players with RA access about cheater report
                 foreach (var player in Player.List)
@@ -103,17 +102,16 @@ namespace ShowReportsInGame
             }
         }
 
-
         //Hint string builders
-        private string NormalSelfReportHintString(LocalReportingEventArgs LocalReporting) { return ShowReportsInGame.Singleton.Config.NormalSelfreportStringOne.Replace("%IssuerUserId%", LocalReporting.Issuer.UserId).Replace("%IssuerGameId%", LocalReporting.Issuer.Id.ToString()).Replace("%IssuerNickname%", LocalReporting.Issuer.Nickname).Replace("%IssuerRole%", LocalReporting.Issuer.Role.Type.ToString()).Replace("%TargetUserId%", LocalReporting.Target.UserId).Replace("%TargetGameId%", LocalReporting.Target.Id.ToString()).Replace("%TargetNickname%", LocalReporting.Target.Nickname).Replace("%TargetRole%", LocalReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", LocalReporting.Reason).Replace(@"\n", Environment.NewLine); }
-        private string NormalReportHintString(LocalReportingEventArgs LocalReporting) { return ShowReportsInGame.Singleton.Config.NormalreportStringOne.Replace("%IssuerUserId%", LocalReporting.Issuer.UserId).Replace("%IssuerGameId%", LocalReporting.Issuer.Id.ToString()).Replace("%IssuerNickname%", LocalReporting.Issuer.Nickname).Replace("%IssuerRole%", LocalReporting.Issuer.Role.Type.ToString()).Replace("%TargetUserId%", LocalReporting.Target.UserId).Replace("%TargetGameId%", LocalReporting.Target.Id.ToString()).Replace("%TargetNickname%", LocalReporting.Target.Nickname).Replace("%TargetRole%", LocalReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", LocalReporting.Reason).Replace(@"\n", Environment.NewLine); }
-        private string CheaterSelfReportHintString(ReportingCheaterEventArgs CheaterReporting) { return ShowReportsInGame.Singleton.Config.CheaterSelfreportStringOne.Replace("%IssuerUserId%", CheaterReporting.Issuer.UserId).Replace("%IssuerGameId%", CheaterReporting.Issuer.Id.ToString()).Replace("%IssuerNickname%", CheaterReporting.Issuer.Nickname).Replace("%IssuerRole%", CheaterReporting.Issuer.Role.Type.ToString()).Replace("%TargetUserId%", CheaterReporting.Target.UserId).Replace("%TargetGameId%", CheaterReporting.Target.Id.ToString()).Replace("%TargetNickname%", CheaterReporting.Target.Nickname).Replace("%TargetRole%", CheaterReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", CheaterReporting.Reason).Replace(@"\n", Environment.NewLine); }
-        private string CheaterReportHintString(ReportingCheaterEventArgs CheaterReporting) { return ShowReportsInGame.Singleton.Config.CheaterreportStringOne.Replace("%IssuerUserId%", CheaterReporting.Issuer.UserId).Replace("%IssuerGameId%", CheaterReporting.Issuer.Id.ToString()).Replace("%IssuerNickname%", CheaterReporting.Issuer.Nickname).Replace("%IssuerRole%", CheaterReporting.Issuer.Role.Type.ToString()).Replace("%TargetUserId%", CheaterReporting.Target.UserId).Replace("%TargetGameId%", CheaterReporting.Target.Id.ToString()).Replace("%TargetNickname%", CheaterReporting.Target.Nickname).Replace("%TargetRole%", CheaterReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", CheaterReporting.Reason).Replace(@"\n", Environment.NewLine); }
+        private string NormalSelfReportHintString(LocalReportingEventArgs LocalReporting) { return ShowReportsInGame.Singleton.Config.NormalSelfreportStringOne.Replace("%IssuerUserId%", LocalReporting.Player.UserId).Replace("%IssuerGameId%", LocalReporting.Player.Id.ToString()).Replace("%IssuerNickname%", LocalReporting.Player.Nickname).Replace("%IssuerRole%", LocalReporting.Player.Role.Type.ToString()).Replace("%TargetUserId%", LocalReporting.Target.UserId).Replace("%TargetGameId%", LocalReporting.Target.Id.ToString()).Replace("%TargetNickname%", LocalReporting.Target.Nickname).Replace("%TargetRole%", LocalReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", LocalReporting.Reason).Replace(@"\n", Environment.NewLine); }
+        private string NormalReportHintString(LocalReportingEventArgs LocalReporting) { return ShowReportsInGame.Singleton.Config.NormalreportStringOne.Replace("%IssuerUserId%", LocalReporting.Player.UserId).Replace("%IssuerGameId%", LocalReporting.Player.Id.ToString()).Replace("%IssuerNickname%", LocalReporting.Player.Nickname).Replace("%IssuerRole%", LocalReporting.Player.Role.Type.ToString()).Replace("%TargetUserId%", LocalReporting.Target.UserId).Replace("%TargetGameId%", LocalReporting.Target.Id.ToString()).Replace("%TargetNickname%", LocalReporting.Target.Nickname).Replace("%TargetRole%", LocalReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", LocalReporting.Reason).Replace(@"\n", Environment.NewLine); }
+        private string CheaterSelfReportHintString(ReportingCheaterEventArgs CheaterReporting) { return ShowReportsInGame.Singleton.Config.CheaterSelfreportStringOne.Replace("%IssuerUserId%", CheaterReporting.Player.UserId).Replace("%IssuerGameId%", CheaterReporting.Player.Id.ToString()).Replace("%IssuerNickname%", CheaterReporting.Player.Nickname).Replace("%IssuerRole%", CheaterReporting.Player.Role.Type.ToString()).Replace("%TargetUserId%", CheaterReporting.Target.UserId).Replace("%TargetGameId%", CheaterReporting.Target.Id.ToString()).Replace("%TargetNickname%", CheaterReporting.Target.Nickname).Replace("%TargetRole%", CheaterReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", CheaterReporting.Reason).Replace(@"\n", Environment.NewLine); }
+        private string CheaterReportHintString(ReportingCheaterEventArgs CheaterReporting) { return ShowReportsInGame.Singleton.Config.CheaterreportStringOne.Replace("%IssuerUserId%", CheaterReporting.Player.UserId).Replace("%IssuerGameId%", CheaterReporting.Player.Id.ToString()).Replace("%IssuerNickname%", CheaterReporting.Player.Nickname).Replace("%IssuerRole%", CheaterReporting.Player.Role.Type.ToString()).Replace("%TargetUserId%", CheaterReporting.Target.UserId).Replace("%TargetGameId%", CheaterReporting.Target.Id.ToString()).Replace("%TargetNickname%", CheaterReporting.Target.Nickname).Replace("%TargetRole%", CheaterReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", CheaterReporting.Reason).Replace(@"\n", Environment.NewLine); }
 
         //Console string builders
-        private string NormalSelfReportConsoleString(LocalReportingEventArgs LocalReporting) { return ShowReportsInGame.Singleton.Config.LocalSelfreportConsoleMsg.Replace("%IssuerUserId%", LocalReporting.Issuer.UserId).Replace("%IssuerGameId%", LocalReporting.Issuer.Id.ToString()).Replace("%IssuerNickname%", LocalReporting.Issuer.Nickname).Replace("%IssuerRole%", LocalReporting.Issuer.Role.Type.ToString()).Replace("%TargetUserId%", LocalReporting.Target.UserId).Replace("%TargetGameId%", LocalReporting.Target.Id.ToString()).Replace("%TargetNickname%", LocalReporting.Target.Nickname).Replace("%TargetRole%", LocalReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", LocalReporting.Reason).Replace(@"\n", Environment.NewLine); }
-        private string NormalReportConsoleString(LocalReportingEventArgs LocalReporting) { return ShowReportsInGame.Singleton.Config.LocalReportConsoleMsg.Replace("%IssuerUserId%", LocalReporting.Issuer.UserId).Replace("%IssuerGameId%", LocalReporting.Issuer.Id.ToString()).Replace("%IssuerNickname%", LocalReporting.Issuer.Nickname).Replace("%IssuerRole%", LocalReporting.Issuer.Role.Type.ToString()).Replace("%TargetUserId%", LocalReporting.Target.UserId).Replace("%TargetGameId%", LocalReporting.Target.Id.ToString()).Replace("%TargetNickname%", LocalReporting.Target.Nickname).Replace("%TargetRole%", LocalReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", LocalReporting.Reason).Replace(@"\n", Environment.NewLine); }
-        private string CheaterSelfReportConsoleString(ReportingCheaterEventArgs CheaterReporting) { return ShowReportsInGame.Singleton.Config.CheaterSelfreportConsoleMsg.Replace("%IssuerUserId%", CheaterReporting.Issuer.UserId).Replace("%IssuerGameId%", CheaterReporting.Issuer.Id.ToString()).Replace("%IssuerNickname%", CheaterReporting.Issuer.Nickname).Replace("%IssuerRole%", CheaterReporting.Issuer.Role.Type.ToString()).Replace("%TargetUserId%", CheaterReporting.Target.UserId).Replace("%TargetGameId%", CheaterReporting.Target.Id.ToString()).Replace("%TargetNickname%", CheaterReporting.Target.Nickname).Replace("%TargetRole%", CheaterReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", CheaterReporting.Reason).Replace(@"\n", Environment.NewLine); }
-        private string CheaterReportConsoleString(ReportingCheaterEventArgs CheaterReporting) { return ShowReportsInGame.Singleton.Config.CheaterReportConsoleMsg.Replace("%IssuerUserId%", CheaterReporting.Issuer.UserId).Replace("%IssuerGameId%", CheaterReporting.Issuer.Id.ToString()).Replace("%IssuerNickname%", CheaterReporting.Issuer.Nickname).Replace("%IssuerRole%", CheaterReporting.Issuer.Role.Type.ToString()).Replace("%TargetUserId%", CheaterReporting.Target.UserId).Replace("%TargetGameId%", CheaterReporting.Target.Id.ToString()).Replace("%TargetNickname%", CheaterReporting.Target.Nickname).Replace("%TargetRole%", CheaterReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", CheaterReporting.Reason).Replace(@"\n", Environment.NewLine); }
+        private string NormalSelfReportConsoleString(LocalReportingEventArgs LocalReporting) { return ShowReportsInGame.Singleton.Config.LocalSelfreportConsoleMsg.Replace("%IssuerUserId%", LocalReporting.Player.UserId).Replace("%IssuerGameId%", LocalReporting.Player.Id.ToString()).Replace("%IssuerNickname%", LocalReporting.Player.Nickname).Replace("%IssuerRole%", LocalReporting.Player.Role.Type.ToString()).Replace("%TargetUserId%", LocalReporting.Target.UserId).Replace("%TargetGameId%", LocalReporting.Target.Id.ToString()).Replace("%TargetNickname%", LocalReporting.Target.Nickname).Replace("%TargetRole%", LocalReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", LocalReporting.Reason).Replace(@"\n", Environment.NewLine); }
+        private string NormalReportConsoleString(LocalReportingEventArgs LocalReporting) { return ShowReportsInGame.Singleton.Config.LocalReportConsoleMsg.Replace("%IssuerUserId%", LocalReporting.Player.UserId).Replace("%IssuerGameId%", LocalReporting.Player.Id.ToString()).Replace("%IssuerNickname%", LocalReporting.Player.Nickname).Replace("%IssuerRole%", LocalReporting.Player.Role.Type.ToString()).Replace("%TargetUserId%", LocalReporting.Target.UserId).Replace("%TargetGameId%", LocalReporting.Target.Id.ToString()).Replace("%TargetNickname%", LocalReporting.Target.Nickname).Replace("%TargetRole%", LocalReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", LocalReporting.Reason).Replace(@"\n", Environment.NewLine); }
+        private string CheaterSelfReportConsoleString(ReportingCheaterEventArgs CheaterReporting) { return ShowReportsInGame.Singleton.Config.CheaterSelfreportConsoleMsg.Replace("%IssuerUserId%", CheaterReporting.Player.UserId).Replace("%IssuerGameId%", CheaterReporting.Player.Id.ToString()).Replace("%IssuerNickname%", CheaterReporting.Player.Nickname).Replace("%IssuerRole%", CheaterReporting.Player.Role.Type.ToString()).Replace("%TargetUserId%", CheaterReporting.Target.UserId).Replace("%TargetGameId%", CheaterReporting.Target.Id.ToString()).Replace("%TargetNickname%", CheaterReporting.Target.Nickname).Replace("%TargetRole%", CheaterReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", CheaterReporting.Reason).Replace(@"\n", Environment.NewLine); }
+        private string CheaterReportConsoleString(ReportingCheaterEventArgs CheaterReporting) { return ShowReportsInGame.Singleton.Config.CheaterReportConsoleMsg.Replace("%IssuerUserId%", CheaterReporting.Player.UserId).Replace("%IssuerGameId%", CheaterReporting.Player.Id.ToString()).Replace("%IssuerNickname%", CheaterReporting.Player.Nickname).Replace("%IssuerRole%", CheaterReporting.Player.Role.Type.ToString()).Replace("%TargetUserId%", CheaterReporting.Target.UserId).Replace("%TargetGameId%", CheaterReporting.Target.Id.ToString()).Replace("%TargetNickname%", CheaterReporting.Target.Nickname).Replace("%TargetRole%", CheaterReporting.Target.Role.Type.ToString()).Replace("%ReportReason%", CheaterReporting.Reason).Replace(@"\n", Environment.NewLine); }
     }
 }

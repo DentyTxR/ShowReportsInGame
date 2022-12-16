@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>ShowReportsInGame</RootNamespace>
     <AssemblyName>ShowReportsInGame</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -29,6 +29,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,19 +57,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\Downloads\Exiled\EXILED\Plugins\dependencies\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\Downloads\Exiled\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Exiled.API, Version=4.1.7.0, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Downloads\Exiled\EXILED\Plugins\dependencies\Exiled.API.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\Exiled6\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Events, Version=4.1.7.0, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="Exiled.API, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Downloads\Exiled\EXILED\Plugins\Exiled.Events.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\Exiled6\EXILED\Plugins\dependencies\Exiled.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Events, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Downloads\Exiled6\EXILED\Plugins\Exiled.Events.dll</HintPath>
     </Reference>
     <Reference Include="SemVer">
       <HintPath>..\..\..\..\..\..\Downloads\Exiled\EXILED\Plugins\dependencies\SemVer.dll</HintPath>
