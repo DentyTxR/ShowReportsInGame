@@ -16,7 +16,7 @@ namespace ShowReportsInGame
             string normalReportConsole = NormalReportConsoleString(ev);
 
             //If the reporter reports themself
-            if (ev.Target.UserId == ev.Target.UserId)
+            if (ev.Target.UserId == ev.Player.UserId)
             {
                 if (ShowReportsInGame.Singleton.Config.SelfReportBroadcastEnabled)
                 {
@@ -33,7 +33,7 @@ namespace ShowReportsInGame
 
                         //Sends console message to all RA access players
                         player.SendConsoleMessage(
-                           message: "[ShowReportsInGame Plugin]" + normalSelfReportConsole, color: "yellow");
+                           message: "[ShowReportsInGame Plugin]\n" + normalSelfReportConsole, color: "yellow");
                     }
                 }
             }
@@ -50,7 +50,7 @@ namespace ShowReportsInGame
 
                         //Sends console message to all RA access players
                         player.SendConsoleMessage(
-                           message: "[ShowReportsInGame Plugin]" + normalReportConsole, color: "yellow");
+                           message: "[ShowReportsInGame Plugin]\n" + normalReportConsole, color: "yellow");
                     }
                 }
             }
@@ -80,7 +80,7 @@ namespace ShowReportsInGame
 
                         //Sends console message about report
                         player.SendConsoleMessage(
-                           message: "[ShowReportsInGame Plugin]" + cheaterSelfReportConsole, color: "yellow");
+                           message: "[ShowReportsInGame Plugin]\n" + cheaterSelfReportConsole, color: "yellow");
                     }
                 }
             }
@@ -96,7 +96,7 @@ namespace ShowReportsInGame
 
                         //Sends console message about report
                         player.SendConsoleMessage(
-                           message: "[ShowReportsInGame Plugin]" + cheaterReportConsole, color: "yellow");
+                           message: "[ShowReportsInGame Plugin]\n" + cheaterReportConsole, color: "yellow");
                     }
                 }
             }
