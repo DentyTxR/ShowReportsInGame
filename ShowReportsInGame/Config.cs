@@ -10,7 +10,7 @@ namespace ShowReportsInGame
         public bool IsEnabled { get; set; } = true;
 
         [Description("Should debug logs be enabled?")]
-        public bool EnableDebug { get; set; } = false;
+        public bool Debug { get; set; } = false;
 
 
         [Description("Should a broadcast be sent to the player that reported themself?")]
