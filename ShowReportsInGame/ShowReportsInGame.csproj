@@ -61,26 +61,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
     <Reference Include="Exiled.API, Version=6.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Documents\exild\Exiled\EXILED\Plugins\dependencies\Exiled.API.dll</HintPath>
+      <HintPath>..\..\EXILED VERSIONS AND REFS\Exiled\EXILED\Plugins\dependencies\Exiled.API.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.Events, Version=6.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Documents\exild\Exiled\EXILED\Plugins\Exiled.Events.dll</HintPath>
-    </Reference>
-    <Reference Include="Exiled.Loader">
-      <HintPath>..\..\..\..\..\..\Documents\exild\Exiled\EXILED\Exiled.Loader.dll</HintPath>
-    </Reference>
-    <Reference Include="SemVer">
-      <HintPath>..\..\..\..\..\..\Downloads\Exiled\EXILED\Plugins\dependencies\SemVer.dll</HintPath>
+      <HintPath>..\..\EXILED VERSIONS AND REFS\Exiled\EXILED\Plugins\Exiled.Events.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Numerics" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\..\AppData\Roaming\EXILED\Plugins\dependencies\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
