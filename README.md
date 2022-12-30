@@ -1,5 +1,4 @@
 # ShowReportsInGame
-# THIS IS FOR EXILED 6 AND 12.0 ONLY, DO NOT USE ON LOWER VERSIONS, REPORT ALL ISSUES TO DentyTxR#0524
 ### Simple plugin to show ingame reports to all online staff, Made in with the EXILED framework for SCP:SL (EXILED 6)
 [![Github All Releases](https://img.shields.io/github/downloads/DentyTxR/ShowReportsInGame/total.svg)]()
 
