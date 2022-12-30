@@ -1,7 +1,6 @@
 # ShowReportsInGame
-## This plugin will not recive any updates until 12.0 comes out (im currently updating to 12.0) also this plugin will be avaibal in the NW API (spelling go brr cuz im typgin really quick )
-### Simple plugin to show ingame reports to all online staff, Made in with the EXILED framework for SCP:SL (EXILED 5)
-
+### Simple plugin to show ingame reports to all online staff, Made in with the EXILED framework for SCP:SL (EXILED 6)
+[![Github All Releases](https://img.shields.io/github/downloads/DentyTxR/ShowReportsInGame/total.svg)]()
 
 P.S, I'm not that good with C# so there will be some small brain moments here so if you have any code suggestions lmk, Also I plan on adding way more configs and stuff, Just message me on Discord if you got suggestions for that.
 

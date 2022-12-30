@@ -10,7 +10,7 @@ namespace ShowReportsInGame
         public bool IsEnabled { get; set; } = true;
 
         [Description("Should debug logs be enabled?")]
-        public bool EnableDebug { get; set; } = false;
+        public bool Debug { get; set; } = false;
 
 
         [Description("Should a broadcast be sent to the player that reported themself?")]
@@ -28,7 +28,7 @@ namespace ShowReportsInGame
 
         //Normal selfreport custom text
         [Description("Normal selfreport hint first line")]
-        public string NormalSelfreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=red>NOTE: THIS IS A SELF-REPORT</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Player Report, Check Console (`) For Info</color>]</size>";
+        public string NormalSelfreportStringOne { get; set; } = @"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=red>NOTE: THIS IS A SELF-REPORT</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Player Report, Check Console (`) For Info</color>]</size>";
 
         //Normal selfreport custom console string
         [Description("Normal selfreport console message")]
@@ -36,7 +36,7 @@ namespace ShowReportsInGame
 
         //Normal report custom text
         [Description("Normal report hint first line")]
-        public string NormalreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=green>NOTE: This is a normal report.</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Player Report, Check Console (`) For Info</color>]</size>";
+        public string NormalreportStringOne { get; set; } = @"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=green>NOTE: This is a normal report.</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Player Report, Check Console (`) For Info</color>]</size>";
 
         //Normal report custom console string
         [Description("Normal selfreport console message")]
@@ -44,7 +44,7 @@ namespace ShowReportsInGame
 
         //Cheater selfreport custom text
         [Description("Cheater selfreport hint first line")]
-        public string CheaterSelfreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=red>WARNING: THIS IS A CHEATER SELFREPORT</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Cheater Report, Check Console (`) For Info</color>]</size>";
+        public string CheaterSelfreportStringOne { get; set; } = @"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=red>WARNING: THIS IS A CHEATER SELFREPORT</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Cheater Report, Check Console (`) For Info</color>]</size>";
 
         //Cheater selfreport custom console string
         [Description("Normal selfreport console message")]
@@ -52,7 +52,7 @@ namespace ShowReportsInGame
 
         //Cheater report custom text
         [Description("Cheater report hint first line")]
-        public string CheaterreportStringOne { get; set; } = @"<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=red>WARNING: THIS IS A CHEATER REPORT</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Cheater Report, Check Console (`) For Info</color>]</size>";
+        public string CheaterreportStringOne { get; set; } = @"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<size=20><color=red>[</color><color=yellow>ShowReportsInGame</color><color=red>]</color></size>\n<size=20><color=red>/|\</color>[<color=red>WARNING: THIS IS A CHEATER REPORT</color>]<color=red>/|\</color></size>\n<size=20>[<color=yellow>Cheater Report, Check Console (`) For Info</color>]</size>";
 
         //Cheater report custom console string
         [Description("Normal selfreport console message")]
