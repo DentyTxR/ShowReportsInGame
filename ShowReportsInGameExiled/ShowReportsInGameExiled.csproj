@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A72AFBCB-7858-433A-BF85-8CC73C572612}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ShowReportsInGame</RootNamespace>
-    <AssemblyName>ShowReportsInGame</AssemblyName>
+    <RootNamespace>ShowReportsInGameExiled</RootNamespace>
+    <AssemblyName>ShowReportsInGameExiled</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -60,45 +60,49 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\Assembly-CSharp-Publicized.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\Assembly-CSharp-Publicized.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-CSharp-Publicized, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\Assembly-CSharp-Publicized.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\CommandSystem.Core.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\CommandSystem.Core.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.API, Version=6.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\Exiled.API.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\Exiled.API.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.CreditTags, Version=6.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\Exiled.CreditTags.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\Exiled.CreditTags.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.CustomItems, Version=6.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\Exiled.CustomItems.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\Exiled.CustomItems.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.CustomRoles, Version=6.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\Exiled.CustomRoles.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\Exiled.CustomRoles.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.Events, Version=6.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\Exiled.Events.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\Exiled.Events.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.Loader, Version=6.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\Exiled.Loader.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\Exiled.Loader.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.Permissions, Version=6.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\Exiled.Permissions.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\Exiled.Permissions.dll</HintPath>
     </Reference>
     <Reference Include="Exiled.Updater, Version=3.1.1.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\Exiled.Updater.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\Exiled.Updater.dll</HintPath>
     </Reference>
     <Reference Include="NorthwoodLib, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\NorthwoodLib.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\NorthwoodLib.dll</HintPath>
     </Reference>
     <Reference Include="PluginAPI, Version=12.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\EXILED.6.0.0-beta.17\lib\net48\PluginAPI.dll</HintPath>
+      <HintPath>..\packages\EXILED.6.0.0-beta.20\lib\net48\PluginAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -118,7 +122,7 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="EventHandler.cs" />
-    <Compile Include="ShowReportsInGame.cs" />
+    <Compile Include="Plugin.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowReportsInGame", "ShowReportsInGame\ShowReportsInGame.csproj", "{A72AFBCB-7858-433A-BF85-8CC73C572612}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowReportsInGameExiled", "ShowReportsInGameExiled\ShowReportsInGameExiled.csproj", "{A72AFBCB-7858-433A-BF85-8CC73C572612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowReportsInGameNwAPI", "ShowReportsInGameNwAPI\ShowReportsInGameNwAPI.csproj", "{BF1BB9DF-94C8-4CEB-A1C5-D431CC094167}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A72AFBCB-7858-433A-BF85-8CC73C572612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A72AFBCB-7858-433A-BF85-8CC73C572612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A72AFBCB-7858-433A-BF85-8CC73C572612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF1BB9DF-94C8-4CEB-A1C5-D431CC094167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF1BB9DF-94C8-4CEB-A1C5-D431CC094167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF1BB9DF-94C8-4CEB-A1C5-D431CC094167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF1BB9DF-94C8-4CEB-A1C5-D431CC094167}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

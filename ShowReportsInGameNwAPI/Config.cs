@@ -1,9 +1,9 @@
-﻿using Exiled.API.Interfaces;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace ShowReportsInGame
+namespace ShowReportsInGameNwAPI
 {
-    public class Config : IConfig
+    public class Config
     {
 
         [Description("Whether or not the plugin is enabled.")]

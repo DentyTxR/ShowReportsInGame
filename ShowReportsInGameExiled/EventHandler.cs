@@ -4,7 +4,7 @@ using Player = Exiled.API.Features.Player;
 using Exiled.Events.EventArgs.Player;
 using Exiled.Events.EventArgs.Server;
 
-namespace ShowReportsInGame
+namespace ShowReportsInGameExiled
 {
     public class EventHandler
     {
