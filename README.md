@@ -41,6 +41,7 @@ Example: ```yml
 cheat_report_admin_chat_msg: <size=25>Cheater Report!\n%IssuerNickname% reported %TargetNickname% for %ReportReason%</size>
 ```
 
+```
 | Variable Name | Returns |
 | --- | --- |
 | `%IssuerUserId%` | Reporter's User ID (@steam/@discord included) |
@@ -54,7 +55,7 @@ cheat_report_admin_chat_msg: <size=25>Cheater Report!\n%IssuerNickname% reported
 | `%TargetRole%` | Reported Current Role At Report Time |
 | ------------------ | ------------------------------------------ |
 | `%ReportReason%` | Reason In Report |
-
+```
 
 ### Previews
 
