@@ -38,8 +38,12 @@ cheat_report_admin_chat_msg: <size=25>Cheater Report!\n[Check Console (`) For In
 ### Custom variables
 #### These can be used in the config to return info, These are case sensitive!!!
 
+Example: 
 
+```yml
+cheat_report_admin_chat_msg: <size=25>Cheater Report!\n%IssuerNickname% reported %TargetNickname% for %ReportReason%</size>
 ```
+
 | Variable Name | Returns |
 | --- | --- |
 | `%IssuerUserId%` | Reporter's User ID (@steam/@discord included) |
@@ -53,7 +57,7 @@ cheat_report_admin_chat_msg: <size=25>Cheater Report!\n[Check Console (`) For In
 | `%TargetRole%` | Reported Current Role At Report Time |
 | ------------------ | ------------------------------------------ |
 | `%ReportReason%` | Reason In Report |
-```
+
 
 ### Previews
 
