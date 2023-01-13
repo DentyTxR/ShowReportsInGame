@@ -1,5 +1,5 @@
 # ShowReportsInGame
-### Simple plugin to show ingame reports to all online staff, Made for EXILED and NW-API
+### A simple plugin to notify all staff in-game about reports via hints, adminchat and client console without the need of opening discord and looking through logs
 [![Github All Releases](https://img.shields.io/github/downloads/DentyTxR/ShowReportsInGame/total.svg)]()
 
 
