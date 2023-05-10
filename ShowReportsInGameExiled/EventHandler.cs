@@ -100,7 +100,7 @@ namespace ShowReportsInGameExiled
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(ShowReportsInGame.Singleton.Config.LocalReportConsoleMsg)
-              .Replace("%IssuerUserId%", LocalReporting.Player.UserId)
+            .Replace("%IssuerUserId%", LocalReporting.Player.UserId)
               .Replace("%IssuerGameId%", LocalReporting.Player.Id.ToString())
               .Replace("%IssuerNickname%", LocalReporting.Player.Nickname)
               .Replace("%IssuerRole%", LocalReporting.Player.Role.Type.ToString())
