@@ -7,7 +7,7 @@ namespace ShowReportsInGameNwAPI
     public class ShowReportsInGame
     {
         public const string PluginName = "ShowReportsInGame";
-        public const string PluginVersion = "2.2.4";
+        public const string PluginVersion = "2.2.6";
         public const string PluginDesc = "Simple plugin that lets all RA players be notified about reports in-game";
 
         public static ShowReportsInGame Singleton;
