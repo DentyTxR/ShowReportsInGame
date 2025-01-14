@@ -15,7 +15,7 @@ namespace ShowReportsInGameNwAPI
 
         [PluginConfig] public Config Config;
 
-        [PluginEntryPoint(PluginName, PluginVersion, PluginDesc, "DentyTxR#0524")]
+        [PluginEntryPoint(PluginName, PluginVersion, PluginDesc, "DentyTxR")]
         public void LoadPlugin()
         {
             Log.Debug("loaded");
