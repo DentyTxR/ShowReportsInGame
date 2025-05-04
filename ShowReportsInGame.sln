@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowReportsInGameExiled", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowReportsInGameNwAPI", "ShowReportsInGameNwAPI\ShowReportsInGameNwAPI.csproj", "{BF1BB9DF-94C8-4CEB-A1C5-D431CC094167}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowReportsInGameLabAPI", "ShowReportsInGameLabAPI\ShowReportsInGameLabAPI.csproj", "{21510900-A974-4EBF-B9AB-8DD1ADD84B2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BF1BB9DF-94C8-4CEB-A1C5-D431CC094167}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF1BB9DF-94C8-4CEB-A1C5-D431CC094167}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF1BB9DF-94C8-4CEB-A1C5-D431CC094167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21510900-A974-4EBF-B9AB-8DD1ADD84B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21510900-A974-4EBF-B9AB-8DD1ADD84B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21510900-A974-4EBF-B9AB-8DD1ADD84B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21510900-A974-4EBF-B9AB-8DD1ADD84B2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
