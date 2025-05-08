@@ -1,5 +1,3 @@
-Yes this STILL works as of 2024 and has no reason to break
-
 # ShowReportsInGame
 ### A simple plugin to notify all staff in-game about reports via hints, adminchat and client console without the need of opening discord and looking through logs
 [![Github All Releases](https://img.shields.io/github/downloads/DentyTxR/ShowReportsInGame/total.svg)]()
