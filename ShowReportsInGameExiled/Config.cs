@@ -5,12 +5,17 @@ namespace ShowReportsInGameExiled
 {
     public class Config : IConfig
     {
-
         [Description("Whether or not the plugin is enabled.")]
         public bool IsEnabled { get; set; } = true;
 
         [Description("Should debug logs be enabled?")]
         public bool Debug { get; set; } = false;
+
+        [Description("Report character limit amount. Anything above will refuse the report, 0 means no limit.")]
+        public int ReportCharacterLimit { get; set; } = 0;
+
+        [Description("Report character limit response when the limit is reached.")]
+        public string ReportCharacterLimitResponse { get; set; } = "Your report exceeds the character limit.";
 
         [Description("Should hints be enabled for report events?")]
         public bool EnableHints { get; set; } = true;

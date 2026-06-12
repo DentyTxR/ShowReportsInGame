@@ -12,8 +12,8 @@ namespace ShowReportsInGameExiled
         public override string Name { get; } = "ShowReportsInGame";
         public override string Author { get; } = "Denty";
         public override string Prefix { get; } = "ShowReportsInGame";
-        public override Version Version { get; } = new Version(2, 2, 7);
-        public override Version RequiredExiledVersion { get; } = new Version(9, 3, 0);
+        public override Version Version { get; } = new Version(2, 3, 0);
+        public override Version RequiredExiledVersion { get; } = new Version(9, 14, 0);
 
         public override void OnEnabled()
         {

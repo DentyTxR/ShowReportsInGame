@@ -11,51 +11,72 @@ namespace ShowReportsInGameExiled
     {
         public void LocalReport(LocalReportingEventArgs ev)
         {
+            if (ev.Player.UserId == ev.Target.UserId)
+                ev.IsAllowed = false;
+
             string localReportHint = LocalReportHintString(ev);
             string localReportConsole = LocalReportConsoleString(ev);
             string localReportAdminChat = LocalReportAdminChatString(ev);
 
-            if (ev.Player.UserId != ev.Target.UserId)
+            if (ShowReportsInGame.Singleton.Config.ReportCharacterLimit != 0 && ev.Reason.Length > ShowReportsInGame.Singleton.Config.ReportCharacterLimit)
             {
-                if (ShowReportsInGame.Singleton.Config.EnableHints)
+                ev.IsAllowed = false;
+                ev.Player.Broadcast(10, ShowReportsInGame.Singleton.Config.ReportCharacterLimitResponse);
+            }
+
+            if (ShowReportsInGame.Singleton.Config.EnableHints || ShowReportsInGame.Singleton.Config.EnableAdminChat)
+            {
+                foreach (var player in Player.List)
                 {
-                    foreach (var player in Player.List)
-                        if (player.RemoteAdminAccess)
-                        {
-                            player.ShowHint(string.Concat(localReportHint), duration: ShowReportsInGame.Singleton.Config.ReportHintDuration);
-                            player.SendConsoleMessage(message: "[ShowReportsInGame Plugin]\n" + localReportConsole, color: "yellow");
-                        }
-                }
-                if (ShowReportsInGame.Singleton.Config.EnableAdminChat)
-                {
-                    foreach (var player in Player.List)
-                        if (player.RemoteAdminAccess)
-                            player.Broadcast(ShowReportsInGame.Singleton.Config.AdminChatReportDuration, localReportAdminChat, Broadcast.BroadcastFlags.AdminChat);
+                    if (!player.RemoteAdminAccess)
+                        continue;
+
+                    if (ShowReportsInGame.Singleton.Config.EnableHints)
+                    {
+                        player.ShowHint(string.Concat(localReportHint), duration: ShowReportsInGame.Singleton.Config.ReportHintDuration);
+                        player.SendConsoleMessage(message: "[ShowReportsInGame Plugin]\n" + localReportConsole, color: "yellow");
+                    }
+
+                    if (ShowReportsInGame.Singleton.Config.EnableAdminChat)
+                    {
+                        player.Broadcast(ShowReportsInGame.Singleton.Config.AdminChatReportDuration, localReportAdminChat, Broadcast.BroadcastFlags.AdminChat);
+                    }
                 }
             }
         }
+
         public void CheaterReport(ReportingCheaterEventArgs ev)
         {
+            if (ev.Player.UserId == ev.Target.UserId)
+                ev.IsAllowed = false;
+
             string cheatReportHint = CheatReportHintString(ev);
             string cheatReportConsole = CheatReportConsoleString(ev);
             string cheatReportAdminChat = CheatReportAdminChatString(ev);
 
-            if (ev.Target.UserId != ev.Player.UserId)
+            if (ShowReportsInGame.Singleton.Config.ReportCharacterLimit != 0 && ev.Reason.Length > ShowReportsInGame.Singleton.Config.ReportCharacterLimit)
             {
-                if (ShowReportsInGame.Singleton.Config.EnableHints)
+                ev.IsAllowed = false;
+                ev.Player.Broadcast(10, ShowReportsInGame.Singleton.Config.ReportCharacterLimitResponse);
+            }
+
+            if (ShowReportsInGame.Singleton.Config.EnableHints || ShowReportsInGame.Singleton.Config.EnableAdminChat)
+            {
+                foreach (var player in Player.List)
                 {
-                    foreach (var player in Player.List)
-                        if (player.RemoteAdminAccess)
-                        {
-                            player.ShowHint(string.Concat(cheatReportHint), duration: ShowReportsInGame.Singleton.Config.ReportHintDuration);
-                            player.SendConsoleMessage(message: "[ShowReportsInGame Plugin]\n" + cheatReportConsole, color: "yellow");
-                        }
-                }
-                if (ShowReportsInGame.Singleton.Config.EnableAdminChat)
-                {
-                    foreach (var player in Player.List)
-                        if (player.RemoteAdminAccess)
-                            player.Broadcast(ShowReportsInGame.Singleton.Config.AdminChatReportDuration, cheatReportAdminChat, Broadcast.BroadcastFlags.AdminChat);
+                    if (!player.RemoteAdminAccess)
+                        continue;
+
+                    if (ShowReportsInGame.Singleton.Config.EnableHints)
+                    {
+                        player.ShowHint(string.Concat(cheatReportHint), duration: ShowReportsInGame.Singleton.Config.ReportHintDuration);
+                        player.SendConsoleMessage(message: "[ShowReportsInGame Plugin]\n" + cheatReportConsole, color: "yellow");
+                    }
+
+                    if (ShowReportsInGame.Singleton.Config.EnableAdminChat)
+                    {
+                        player.Broadcast(ShowReportsInGame.Singleton.Config.AdminChatReportDuration, cheatReportAdminChat, Broadcast.BroadcastFlags.AdminChat);
+                    }
                 }
             }
         }
@@ -147,6 +168,7 @@ namespace ShowReportsInGameExiled
               .Replace(@"\n", Environment.NewLine);
             return sb.ToString();
         }
+
         private string CheatReportAdminChatString(ReportingCheaterEventArgs CheaterReporting)
         {
             StringBuilder sb = new StringBuilder();
